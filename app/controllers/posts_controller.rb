@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery prepend: true
 
   # GET /posts
   # GET /posts.json
