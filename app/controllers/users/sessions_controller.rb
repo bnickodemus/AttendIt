@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
       BackgroundWorker.trigger(resource)
     end
   end
-  
+
   # GET /resource/sign_in
   # def new
   #   super

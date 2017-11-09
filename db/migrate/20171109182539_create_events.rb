@@ -1,6 +1,7 @@
-class CreatePosts < ActiveRecord::Migration[5.1]
+class CreateEvents < ActiveRecord::Migration[5.1]
   def change
-    create_table :posts do |t|
+    create_table :events do |t|
+      t.string :author
       t.string :title
       t.datetime :date
       t.text :content
