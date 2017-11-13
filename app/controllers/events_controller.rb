@@ -25,7 +25,11 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    #@post = current_user.posts.build(params[:post])
     @event = Event.new(event_params)
+
+    #@event = @current_user.events.create(published_at: Time.now)
+  
 
     respond_to do |format|
       if @event.save

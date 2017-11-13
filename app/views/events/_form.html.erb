@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= form.label :author %>
-    <%= form.text_field :author, id: :event_author %>
+    
+    <%= form.text_field :author, value: current_user.name %> 
   </div>
 
   <div class="field">
