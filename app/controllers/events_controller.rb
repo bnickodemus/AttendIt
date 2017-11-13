@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    #@events = Event.all
+    @events = current_user.events
   end
 
   # GET /events/1
@@ -26,9 +27,9 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     #@post = current_user.posts.build(params[:post])
-    @event = Event.new(event_params)
+    #@event = Event.new(event_params)
 
-    #@event = @current_user.events.create(published_at: Time.now)
+    @event = current_user.events.new(event_params)
   
 
     respond_to do |format|
