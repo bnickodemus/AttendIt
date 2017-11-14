@@ -1,28 +1,16 @@
 
-
-<div class = "media">
-  <div class = "media-body">
-    <table class = "table table-hover">
-      <thead>
-        <tr>
-          <th>Venue</th>
-          <th>Title</th>
-          <th>Date</th>
-          <th>Content</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-        <% @events.each do |event| %>
-          <tr>
-            <td><%= event.author %></td>
-            <td><%= event.title %></td>
-            <td><%= event.date %></td>
-            <td id="eventContent"><%= raw(event.content) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-
-    </table>
+  <div class="row">
+      <% @events.each do |event| %>
+        <div class="col-md-8 col-md-push-2">
+          <div class="card">
+            <div class="card-header">
+              <%= event.author %> - <%= event.date.strftime('%a %B %d, %r') %>
+            </div>
+            <div class="card-block">
+              <h3 class="card-title"><%= event.title %></h3>
+              <p class="card-text text-center"><%= raw(event.content) %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
   </div>
-</div>
