@@ -20,7 +20,7 @@
         <td><%= event.author %></td>
         <td><%= event.title %></td>
         <td><%= event.date %></td>
-        <td><%= event.content %></td>
+        <td><%= raw(event.content) %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
