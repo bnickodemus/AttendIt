@@ -1,3 +1,32 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+	background-color: #ccc !important;
+}
+
+.card {
+	background: #fff;
+    border-radius: 2px;
+    display: block;
+    margin: 1rem;
+    position: relative;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+	& .card-header {
+		padding: 10px;
+	}
+
+	& .card-block {
+		padding: 10px;
+	}
+
+	& .card-title {
+		margin: 0;
+	}
+
+	& .card-text {
+		padding: 10px;
+	}
+}
