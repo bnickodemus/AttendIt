@@ -13,8 +13,7 @@
 
   <div class="field">
     <%= form.label :author %>
-    
-    <%= form.text_field :author, value: current_user.name %> 
+    <%= form.text_field :author, value: current_user.name %>
   </div>
 
   <div class="field">
@@ -29,10 +28,20 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, id: :event_content %>
+    <%= form.cktext_area :content, id: :event_content %>
   </div>
+
+  <textarea id="event_content" name="editor1"></textarea>
+  <script>
+    CKEDITOR.replace( 'editor1' );
+  </script>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace( 'editor1' );
+</script>

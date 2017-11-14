@@ -18,7 +18,7 @@
             <td><%= event.author %></td>
             <td><%= event.title %></td>
             <td><%= event.date %></td>
-            <td><%= event.content %></td>
+            <td id="eventContent"><%= raw(event.content) %></td>
           </tr>
         <% end %>
       </tbody>

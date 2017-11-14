@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   root to: 'home#index'
   get 'home/index'
   get 'user_root' => 'events#index', as: :user_root
