@@ -8,8 +8,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="navbar-text">
         <% if user_signed_in? %>
-          <li><%= link_to 'Edit Events', '/events' %></li>
           Signed in as  <%= current_user.name %>
+          <li><%= link_to 'Edit Events', '/events' %></li>
         <% end %></li>
         <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
         <li><%= link_to 'Events', '/events' %></li>

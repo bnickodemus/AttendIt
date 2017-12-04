@@ -1,14 +1,19 @@
 
+
+
+
   <div class="row">
       <% @events.each do |event| %>
-        <div class="col-md-8 col-md-push-2">
+        <div class="col-sm-4 ">
           <div class="card">
-            <div class="card-header">
-              <%= event.author %> | <%= event.date.strftime('%a %B %d %p') %>
-            </div>
+            <h2 class="card-header"> <%= event.title %></h2>
             <div class="card-block">
-              <h3 class="card-title"><%= event.title %></h3>
+              <div class="card-text"> <%= event.author %> | <%= event.date.strftime('%a %B %d %p') %></div>
+              <!--<hr class ="seperator"/> -->
               <p class="card-text text-center"><%= raw(event.content) %></p>
+                  <div class="card-footer text-muted">
+                    <a href="#" class="btn btn-primary">Buy Tickets</a>
+                </div>
             </div>
           </div>
         </div>
@@ -16,12 +21,12 @@
   </div>
 
 <script>
-    document.getElementsByTagName("Body")[0].style.backgroundColor = "#A33";
+    //document.getElementsByTagName("Body")[0].style.backgroundColor = "#A33";
+    document.body.style.background = "url('/assets/greyMusic.jpg')";
     for (var i = 0; i < document.getElementsByTagName("img").length; i++) {
       document.getElementsByTagName("img")[i].style.display="inline-block";
       document.getElementsByTagName("img")[i].style.backgroundPosition="center";
       document.getElementsByTagName("img")[i].style.width="100%";
-
     }
 </script>
 
