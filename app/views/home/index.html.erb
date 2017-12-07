@@ -1,4 +1,12 @@
 
+<div class="row" style="margin-top: -2em;">
+      <div class="col-md-8 col-md-push-2">
+        <div class="card">
+          <input style="width: 100%" type="text" id="inputSearch" onkeyup="search()" placeholder="Search" title="Type in a name">
+        </div>
+      </div>
+  </div>
+
   <div class="row">
       <% @events.each do |event| %>
         <div class="col-md-8 col-md-push-2">
@@ -21,7 +29,21 @@
       document.getElementsByTagName("img")[i].style.display="inline-block";
       document.getElementsByTagName("img")[i].style.backgroundPosition="center";
       document.getElementsByTagName("img")[i].style.width="100%";
+    }
 
+    function search() {
+      var title = document.getElementsByClassName("card-title");
+      var date = document.getElementsByClassName("card-header");
+      input = document.getElementById("inputSearch");
+      filter = input.value.toUpperCase();
+      // filter by name or by date
+      for (i = 0; i < title.length; i++) {
+        if (title[i].innerHTML.toUpperCase().indexOf(filter) > -1 ||
+        date[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            title[i].parentNode.parentNode.style.display = "";
+        } else {
+          title[i].parentNode.parentNode.style.display = "none";
+        }
+      }
     }
 </script>
-
