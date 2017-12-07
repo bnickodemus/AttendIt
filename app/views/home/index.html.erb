@@ -4,7 +4,7 @@
         <div class="col-md-8 col-md-push-2">
           <div class="card">
             <div class="card-header">
-              <%= event.author %> - <%= event.date.strftime('%a %B %d, %r') %>
+              <%= event.author %> | <%= event.date.strftime('%a %B %d %p') %>
             </div>
             <div class="card-block">
               <h3 class="card-title"><%= event.title %></h3>
