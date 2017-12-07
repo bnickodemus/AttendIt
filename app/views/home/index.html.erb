@@ -1,6 +1,5 @@
 
 
-
 <div class="row" style="margin-top: -2em;">
       <div class="col-md-8 col-md-push-2">
         <div class="card">
@@ -8,7 +7,6 @@
         </div>
       </div>
   </div>
-
 
   <div class="row">
       <% @events.each do |event| %>
@@ -39,8 +37,8 @@
     }
 
     function search() {
-      var title = document.getElementsByClassName("card-title");
-      var date = document.getElementsByClassName("card-header");
+      var title = document.getElementsByClassName("card-header");
+      var date = document.getElementsByClassName("card-text");
       input = document.getElementById("inputSearch");
       filter = input.value.toUpperCase();
       // filter by name or by date
@@ -52,6 +50,5 @@
           title[i].parentNode.parentNode.style.display = "none";
         }
       }
-
     }
 </script>
