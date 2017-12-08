@@ -1,6 +1,3 @@
-
-
-
 <div class="row" style="margin-top: -2em;">
       <div class="col-md-8 col-md-push-2">
         <div class="card">
@@ -9,19 +6,17 @@
       </div>
   </div>
 
-
   <div class="row">
       <% @events.each do |event| %>
         <div class="col-sm-4 ">
           <div class="card">
-            <h2 class="card-header"> <%= event.title %></h2>
+            <h2 class="card-header"><%= event.title %></h2>
             <div class="card-block">
-              <div class="card-text"> <%= event.author %> | <%= event.date.strftime('%a %B %d %p') %></div>
-              <!--<hr class ="seperator"/> -->
-              <p class="card-text text-center"><%= raw(event.content) %></p>
-                  <div class="card-footer text-muted">
-                    <a href="#" class="btn btn-primary">Buy Tickets</a>
-                </div>
+              <div class="card-text"><%= event.author %> | <%= event.date.strftime('%a %B %d %p') %></div>
+            </div>
+            <p><%= raw(event.content) %></p>
+            <div class="card-footer text-muted">
+              <a href="#" class="btn btn-primary">Buy Tickets</a>
             </div>
           </div>
         </div>
@@ -39,19 +34,18 @@
     }
 
     function search() {
-      var title = document.getElementsByClassName("card-title");
-      var date = document.getElementsByClassName("card-header");
+      var title = document.getElementsByClassName("card-header");
+      var vendor = document.getElementsByClassName("card-text");
       input = document.getElementById("inputSearch");
       filter = input.value.toUpperCase();
       // filter by name or by date
       for (i = 0; i < title.length; i++) {
         if (title[i].innerHTML.toUpperCase().indexOf(filter) > -1 ||
-        date[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        vendor[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
             title[i].parentNode.parentNode.style.display = "";
         } else {
           title[i].parentNode.parentNode.style.display = "none";
         }
       }
-
     }
 </script>
