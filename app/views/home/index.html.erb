@@ -1,0 +1,51 @@
+<div class="row" style="margin-top: -2em;">
+      <div class="col-md-8 col-md-push-2">
+        <div class="card">
+          <input style="width: 100%" type="text" id="inputSearch" onkeyup="search()" placeholder="Search" title="Type in a name">
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <% @events.each do |event| %>
+        <div class="col-sm-4 ">
+          <div class="card">
+            <h2 class="card-header"><%= event.title %></h2>
+            <div class="card-block">
+              <div class="card-text"><%= event.author %> | <%= event.date.strftime('%a %B %d %p') %></div>
+            </div>
+            <p><%= raw(event.content) %></p>
+            <div class="card-footer text-muted">
+              <a href="#" class="btn btn-primary">Buy Tickets</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+
+<script>
+    //document.getElementsByTagName("Body")[0].style.backgroundColor = "#A33";
+    document.body.style.background = "url('/assets/greyMusic.jpg')";
+    for (var i = 0; i < document.getElementsByTagName("img").length; i++) {
+      document.getElementsByTagName("img")[i].style.display="inline-block";
+      document.getElementsByTagName("img")[i].style.backgroundPosition="center";
+      document.getElementsByTagName("img")[i].style.width="100%";
+
+    }
+
+    function search() {
+      var title = document.getElementsByClassName("card-header");
+      var vendor = document.getElementsByClassName("card-text");
+      input = document.getElementById("inputSearch");
+      filter = input.value.toUpperCase();
+      // filter by name or by date
+      for (i = 0; i < title.length; i++) {
+        if (title[i].innerHTML.toUpperCase().indexOf(filter) > -1 ||
+        vendor[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            title[i].parentNode.parentNode.style.display = "";
+        } else {
+          title[i].parentNode.parentNode.style.display = "none";
+        }
+      }
+    }
+</script>
